@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "573f2f5c-9d6a-4897-94e0-d641c10e74a7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -90,6 +99,61 @@
                     "action": "Jumping",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "UPDOWNLEFTRIGHT",
+                    "id": "662802a6-62eb-4a9a-8ec5-b1615cbc55f0",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "7bd8336d-cd18-4a80-bcea-9f360d14482f",
+                    "path": "<Keyboard>/#(I)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0938535e-38c8-4eed-98c9-937cf126cba4",
+                    "path": "<Keyboard>/#(K)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "8e31da7f-fcb5-4d25-b5f8-a22b67f3b9e4",
+                    "path": "<Keyboard>/#(J)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "fc111e02-c084-46c0-b8ed-099f54ffd01f",
+                    "path": "<Keyboard>/#(L)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

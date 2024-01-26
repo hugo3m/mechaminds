@@ -323,6 +323,11 @@ PrefabInstance:
       propertyPath: rbody
       value: 
       objectReference: {fileID: 334731638}
+    - target: {fileID: 6737293257976376682, guid: 6610c3d9154bea1469745574f3b606f3,
+        type: 3}
+      propertyPath: torqueStrength
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 7278357239207008228, guid: 6610c3d9154bea1469745574f3b606f3,
         type: 3}
       propertyPath: m_Name

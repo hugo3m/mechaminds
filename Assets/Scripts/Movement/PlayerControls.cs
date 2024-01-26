@@ -44,6 +44,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""573f2f5c-9d6a-4897-94e0-d641c10e74a7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -112,6 +121,61 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jumping"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""UPDOWNLEFTRIGHT"",
+                    ""id"": ""662802a6-62eb-4a9a-8ec5-b1615cbc55f0"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""7bd8336d-cd18-4a80-bcea-9f360d14482f"",
+                    ""path"": ""<Keyboard>/#(I)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""0938535e-38c8-4eed-98c9-937cf126cba4"",
+                    ""path"": ""<Keyboard>/#(K)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8e31da7f-fcb5-4d25-b5f8-a22b67f3b9e4"",
+                    ""path"": ""<Keyboard>/#(J)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""fc111e02-c084-46c0-b8ed-099f54ffd01f"",
+                    ""path"": ""<Keyboard>/#(L)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -122,6 +186,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jumping = m_Player.FindAction("Jumping", throwIfNotFound: true);
+        m_Player_Rotation = m_Player.FindAction("Rotation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,12 +250,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jumping;
+    private readonly InputAction m_Player_Rotation;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jumping => m_Wrapper.m_Player_Jumping;
+        public InputAction @Rotation => m_Wrapper.m_Player_Rotation;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -206,6 +273,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jumping.started += instance.OnJumping;
             @Jumping.performed += instance.OnJumping;
             @Jumping.canceled += instance.OnJumping;
+            @Rotation.started += instance.OnRotation;
+            @Rotation.performed += instance.OnRotation;
+            @Rotation.canceled += instance.OnRotation;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -216,6 +286,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jumping.started -= instance.OnJumping;
             @Jumping.performed -= instance.OnJumping;
             @Jumping.canceled -= instance.OnJumping;
+            @Rotation.started -= instance.OnRotation;
+            @Rotation.performed -= instance.OnRotation;
+            @Rotation.canceled -= instance.OnRotation;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -237,5 +310,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJumping(InputAction.CallbackContext context);
+        void OnRotation(InputAction.CallbackContext context);
     }
 }
