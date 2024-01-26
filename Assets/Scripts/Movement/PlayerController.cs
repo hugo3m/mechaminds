@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -19,6 +20,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(_controls.Player.Movement.ReadValue<Vector2>() * speed * Time.deltaTime);
+        Vector2 movementInput = _controls.Player.Movement.ReadValue<Vector2>();
+        Vector3 translate = new Vector3(
+            movementInput.x, 
+            _controls.Player.Jumping.ReadValue<float>(), 
+            movementInput.y);
+        transform.Translate(translate * (speed * Time.deltaTime));
     }
 }
