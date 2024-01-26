@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 4;
+    public float forceStrength = 10000;
+    public Rigidbody rbody;
     private PlayerControls _controls;
 
-    private void Awake() => _controls = new PlayerControls();
+    private void Awake()
+    {
+        _controls = new PlayerControls();
+    }
 
     private void OnEnable() => _controls.Enable();
 
@@ -25,6 +29,6 @@ public class PlayerController : MonoBehaviour
             movementInput.x, 
             _controls.Player.Jumping.ReadValue<float>(), 
             movementInput.y);
-        transform.Translate(translate * (speed * Time.deltaTime));
+        rbody.AddForce(translate.normalized * (Time.deltaTime * forceStrength), ForceMode.Impulse);
     }
 }
