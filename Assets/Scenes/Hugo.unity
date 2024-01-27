@@ -533,7 +533,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1330127420
+--- !u!1001 &1631762604
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -544,12 +544,12 @@ PrefabInstance:
     - target: {fileID: 1946400043036894480, guid: e4c9b22df2df54c299c884709810928b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: e4c9b22df2df54c299c884709810928b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.229
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: e4c9b22df2df54c299c884709810928b,
         type: 3}
@@ -591,16 +591,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6737293257976376682, guid: e4c9b22df2df54c299c884709810928b,
-        type: 3}
-      propertyPath: state
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6737293257976376682, guid: e4c9b22df2df54c299c884709810928b,
-        type: 3}
-      propertyPath: torqueStrength
-      value: 10000
-      objectReference: {fileID: 0}
     - target: {fileID: 7278357239207008228, guid: e4c9b22df2df54c299c884709810928b,
         type: 3}
       propertyPath: m_Name
@@ -618,5 +608,5 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 1330127420}
   - {fileID: 102757860}
+  - {fileID: 1631762604}
