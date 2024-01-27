@@ -11,7 +11,7 @@ using Vector3 = UnityEngine.Vector3;
 public class PlayerController : MonoBehaviour
 {
 
-    enum State
+    public enum State
     {
         Alone,
         Jointed
@@ -21,32 +21,37 @@ public class PlayerController : MonoBehaviour
     public float forceStrength = 10000;
     // torque strength
     public float torqueStrength = 10000;
-    // gameobject rigidbody
-    public Rigidbody rbody;
-    // collider to create the joint from
-    public new Collider jointCollider;
+    // upper rigidbody
+    public Rigidbody upperRigidbody;
+    // lower rigidbody
+    public Rigidbody lowerRigidbody;
+    // the fixed joint between upper and lower body
+    public FixedJoint upperLowerFixedJoint;
+    // the spring joint between upper and lower body
+    public SpringJoint upperLowerSpringJoint;
 
     // current state of the entity
-    private State _state;
+    public State state = State.Alone;
     // force applied
-    private Vector3 _force;
+    private Vector3 _leftHandInput;
     // torque applied
-    private Vector3 _torque;
+    private Vector3 _rightHandInput;
 
     
     // private PlayerControls _controls;
-    /*
+    
      private void Awake()
     {
-        _controls = new PlayerControls();
     }
+    
 
+    /*
     private void OnEnable() => _controls.Enable();
 
     private void OnDisable() => _controls.Disable();
     */
 
-    private void OnCollisionEnter(Collision collision)
+    /* private void OnCollisionEnter(Collision collision)
     {
         // for each point of contact
         foreach (ContactPoint contact in collision.contacts)
@@ -67,37 +72,54 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-    }
+    } */
 
     public void Move(InputAction.CallbackContext context)
     {
-        Vector2 movementInput = context.ReadValue<Vector2>();
-        //  create force vector
-        _force = new Vector3(
-            movementInput.x, 
-            _force.y, 
-            movementInput.y);
+        Vector2 input = context.ReadValue<Vector2>();
+        if (state == State.Alone)
+        {
+            //  create force vector
+            _leftHandInput = new Vector3(
+                input.x, 
+                _leftHandInput.y, 
+                input.y);
+        }
+
+        if (state == State.Jointed)
+        {
+            _leftHandInput = new Vector3(
+                input.y,
+                0,
+                -input.x
+            );
+        }
+        
     }
     
     public void Jump(InputAction.CallbackContext context)
     {
-        float jumpInput = context.ReadValue<float>();
-        //  create force vector
-        _force = new Vector3(
-            _force.x,
-            jumpInput,
-            _force.z);
+        float input = context.ReadValue<float>();
+        if (state == State.Alone)
+        {
+            //  create force vector
+            _leftHandInput = new Vector3(
+                _leftHandInput.x,
+                input,
+                _leftHandInput.z); 
+        }
+        
     }
     
     public void Rotate(InputAction.CallbackContext context)
     {
-        // retrieve rotation input
-        Vector2 rotationInput = context.ReadValue<Vector2>();
+        // retrieve input
+        Vector2 input = context.ReadValue<Vector2>();
         // create torque vector
-        _torque = new Vector3(
-            rotationInput.y,
+        _rightHandInput = new Vector3(
+            input.y,
             0,
-            -rotationInput.x
+            -input.x
         );
         
     }
@@ -105,10 +127,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        // add force to rigidbody
-        rbody.AddForce(_force.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
-        // add torque to rigidbody
-        rbody.AddRelativeTorque(_torque.normalized * (Time.deltaTime * torqueStrength), ForceMode.Force);
+        if (state == State.Alone)
+        {
+            // add force to rigidbody
+            upperRigidbody.AddRelativeForce(_leftHandInput.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
+            // add torque to rigidbody
+            upperRigidbody.AddRelativeTorque(_rightHandInput.normalized * (Time.deltaTime * torqueStrength), ForceMode.Force);
+        }
+        if (state == State.Jointed)
+        {
+            // add force to rigidbody
+            upperRigidbody.AddRelativeTorque(_leftHandInput.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
+            // add torque to rigidbody
+            lowerRigidbody.AddRelativeTorque(_rightHandInput.normalized * (Time.deltaTime * torqueStrength), ForceMode.Force);
+        }
+        
     }
 
     void Update()
