@@ -16,9 +16,6 @@ public class Mover : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
     
-
-    
-
     private Vector3 _moveDirection = Vector3.zero;
     private Vector2 _inputVector = Vector2.zero;
     
