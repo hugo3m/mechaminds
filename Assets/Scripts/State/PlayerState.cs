@@ -45,4 +45,10 @@ public class PlayerState : EntityState
             Destroy(joint);
         }
     }
+    
+    public override void SetState(State value)
+    {
+        CurrentState = value;
+        UpdateJoin();
+    }
 }

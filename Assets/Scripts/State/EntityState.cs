@@ -20,7 +20,7 @@ public class EntityState : MonoBehaviour
         return CurrentState;
     }
 
-    public void SetState(State value)
+    public virtual void SetState(State value)
     {
         CurrentState = value;
     }

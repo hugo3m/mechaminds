@@ -10,10 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     // Components:
     PlayerController playerController;
-    [SerializeField] private List<GameObject> players = new List<GameObject>();
-    
-    // Attributes:
-    private Int16 index = 0;
+    [SerializeField] private List<PlayerController> players = new List<PlayerController>();
 
     private void Start()
     {

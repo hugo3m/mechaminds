@@ -5,30 +5,22 @@ using UnityEngine;
 public class PlayerJunction : MonoBehaviour
 {
     // Components:
-    // collider
-    public Collider Collider;
+    public PlayerState playerState;
     
     private void OnCollisionEnter(Collision collision)
     {
-        // for each point of contact
-        foreach (ContactPoint contact in collision.contacts)
+        if (collision.collider.CompareTag("PassiveCollider") && playerState.GetState() == PlayerState.State.Alone)
         {
-            // if contact with the collider
-            if (contact.thisCollider == Collider)
+            // retrieve other rigidbody
+            Rigidbody torsoRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            // if other rigidbody exists
+            if (torsoRigidbody != null)
             {
-                Debug.Log(collision.gameObject.tag);
-                Debug.Log(collision.gameObject.CompareTag("PassiveCollider"));
-                if (collision.gameObject.CompareTag("PassiveCollider"))
-                {
-                    Debug.Log("Attached!");
-                }
-                // retrieve other rigidbody
-                // Rigidbody otherRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-                // if other rigidbody exists
-                // if (otherRigidbody != null)
-                // {
-                    //Debug.Log(collision.gameObject.tag);
-                // }
+                playerState.SetState(PlayerState.State.Joined);
+                CharacterJoint joint = gameObject.AddComponent<CharacterJoint>();
+                // connect the joint to the torsoRigidbody
+                joint.connectedBody = torsoRigidbody;
+                joint.enableCollision = true;
             }
         }
     }

@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class TorsoState : EntityState
 {
-    private State[] JunctionStates = new State[4];
+    public PassiveJunctionState[] PassiveJunctionStates = new PassiveJunctionState[4];
 }

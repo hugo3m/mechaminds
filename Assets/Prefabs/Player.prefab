@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
-  - {fileID: 7278357239207008228, guid: a77ffb052d72140ebbd489fd6431ff7f, type: 3}
-  - {fileID: 7278357239207008228, guid: 9160f1498c12546e6a6ffa04a1dda574, type: 3}
+  - {fileID: 6737293257976376682, guid: 9160f1498c12546e6a6ffa04a1dda574, type: 3}
+  - {fileID: 6737293257976376682, guid: a77ffb052d72140ebbd489fd6431ff7f, type: 3}
 --- !u!114 &8319410555150692406
 MonoBehaviour:
   m_ObjectHideFlags: 0

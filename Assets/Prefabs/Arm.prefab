@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6737293257976376682}
   - component: {fileID: 6144534717593962800}
   - component: {fileID: 8841901677191831413}
-  - component: {fileID: 8850679684801173282}
+  - component: {fileID: 5214765586790604419}
   m_Layer: 0
   m_Name: Arm
   m_TagString: Untagged
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherRigidbody: {fileID: 1382484864526926426}
---- !u!114 &8850679684801173282
+--- !u!114 &5214765586790604419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfad6928c8104878a56e411839b31f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 2676203071547071605}
+  playerState: {fileID: 8841901677191831413}
 --- !u!1 &8958384778364768521
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.533
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
@@ -377,6 +377,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6284843998331118443, guid: db34280abff124bafb7a3fd8ef8fe840,
+        type: 3}
+      propertyPath: playerState
+      value: 
+      objectReference: {fileID: 8841901677191831413}
     - target: {fileID: 7278357239207008228, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_Name
@@ -385,19 +390,19 @@ PrefabInstance:
     - target: {fileID: 9221662320782205055, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.68
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9221662320782205055, guid: db34280abff124bafb7a3fd8ef8fe840,
+        type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 74955749286841476, guid: db34280abff124bafb7a3fd8ef8fe840, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db34280abff124bafb7a3fd8ef8fe840, type: 3}
---- !u!136 &2676203071547071605 stripped
-CapsuleCollider:
-  m_CorrespondingSourceObject: {fileID: 9221662320782205055, guid: db34280abff124bafb7a3fd8ef8fe840,
-    type: 3}
-  m_PrefabInstance: {fileID: 6546586265902169098}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4744864367873906970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
