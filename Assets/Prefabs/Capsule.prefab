@@ -123,10 +123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f473a883e430164aa90cb992e4f76a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upperRigidbody: {fileID: 0}
+  lowerRigidbody: {fileID: 0}
+  state: {fileID: 0}
   forceStrength: 10000
   torqueStrength: 10
-  rbody: {fileID: 6144534717593962800}
-  jointCollider: {fileID: 0}
 --- !u!54 &6144534717593962800
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -249,6 +250,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 573f2f5c-9d6a-4897-94e0-d641c10e74a7
     m_ActionName: Player/Rotation[/Keyboard/i,/Keyboard/k,/Keyboard/j,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8568e227-d5cf-4f35-8a67-a55cd76a7c38
+    m_ActionName: Player/Connect[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

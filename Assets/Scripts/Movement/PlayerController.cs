@@ -27,11 +27,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 _leftHandInput;
     // torque applied
     private Vector3 _rightHandInput;
+    // player index 
+    [SerializeField] private int playerIndex;
     
-    public void Move(InputAction.CallbackContext context)
+    public int GetPlayerIndex()
     {
-        // reading input
-        Vector2 input = context.ReadValue<Vector2>();
+        return playerIndex;
+    }
+    
+    public void Move(Vector2 input)
+    {
         // if alone
         if (state.GetState() == EntityState.State.Alone)
         {
@@ -42,7 +47,7 @@ public class PlayerController : MonoBehaviour
                 input.y);
         }
         // if joined
-        if (state.GetState() == EntityState.State.Jointed)
+        if (state.GetState() == EntityState.State.Joined)
         {
             // create vector for torque
             _leftHandInput = new Vector3(
@@ -53,10 +58,8 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    public void Jump(InputAction.CallbackContext context)
+    public void Jump(float input)
     {
-        // reading input
-        float input = context.ReadValue<float>();
         // if alone
         if (state.GetState() == EntityState.State.Alone)
         {
@@ -69,10 +72,8 @@ public class PlayerController : MonoBehaviour
         
     }
     
-    public void Rotate(InputAction.CallbackContext context)
+    public void Rotate(Vector2 input)
     {
-        // retrieve input
-        Vector2 input = context.ReadValue<Vector2>();
         // create torque vector
         _rightHandInput = new Vector3(
             input.y,
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour
             lowerRigidbody.AddForce(_leftHandInput.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
             lowerRigidbody.AddRelativeTorque(_rightHandInput.normalized * (Time.deltaTime * torqueStrength), ForceMode.Force);
         }
-        if (state.GetState() == EntityState.State.Jointed)
+        if (state.GetState() == EntityState.State.Joined)
         {
             // add force to rigidbody
             upperRigidbody.AddRelativeTorque(_leftHandInput.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
