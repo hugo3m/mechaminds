@@ -128,8 +128,8 @@ MonoBehaviour:
   upperRigidbody: {fileID: 5813602519520534515}
   lowerRigidbody: {fileID: 1382484864526926426}
   state: {fileID: 6109542060526861365}
-  forceStrength: 5000
-  torqueStrength: 5000
+  forceStrength: 1500
+  torqueStrength: 1500
   playerIndex: 0
 --- !u!54 &5813602519520534515
 Rigidbody:
@@ -245,8 +245,8 @@ MonoBehaviour:
   upperRigidbody: {fileID: 5813602519520534515}
   lowerRigidbody: {fileID: 1382484864526926426}
   state: {fileID: 266253764976336514}
-  forceStrength: 10000
-  torqueStrength: 10000
+  forceStrength: 1500
+  torqueStrength: 1500
   playerIndex: 0
 --- !u!114 &266253764976336514
 MonoBehaviour:
@@ -494,17 +494,17 @@ PrefabInstance:
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 0.436
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.273
+      value: -1.033
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.263
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
@@ -564,7 +564,7 @@ PrefabInstance:
     - target: {fileID: 9221662320782205055, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_Radius
-      value: 0.23
+      value: 0.22
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 74955749286841476, guid: db34280abff124bafb7a3fd8ef8fe840, type: 3}

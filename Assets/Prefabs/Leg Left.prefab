@@ -196,8 +196,8 @@ MonoBehaviour:
   upperRigidbody: {fileID: 5742347887681858470}
   lowerRigidbody: {fileID: 1382484864526926426}
   state: {fileID: 9218591629063443273}
-  forceStrength: 5000
-  torqueStrength: 5000
+  forceStrength: 1500
+  torqueStrength: 1500
   playerIndex: 0
 --- !u!114 &9218591629063443273
 MonoBehaviour:
@@ -488,12 +488,12 @@ PrefabInstance:
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.087
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.125
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}

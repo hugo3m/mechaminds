@@ -196,8 +196,8 @@ MonoBehaviour:
   upperRigidbody: {fileID: 1103954973860824987}
   lowerRigidbody: {fileID: 1382484864526926426}
   state: {fileID: 8841901677191831413}
-  forceStrength: 5000
-  torqueStrength: 5000
+  forceStrength: 1500
+  torqueStrength: 1500
   playerIndex: 0
 --- !u!114 &8841901677191831413
 MonoBehaviour:
@@ -483,12 +483,12 @@ PrefabInstance:
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.006000001
+      value: -0.391
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.714
+      value: -0.396
       objectReference: {fileID: 0}
     - target: {fileID: 1946400043036894480, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
@@ -547,13 +547,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8235661825027803568, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235661825027803568, guid: db34280abff124bafb7a3fd8ef8fe840,
+        type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 3eb062ae31dd942678679185f8ab62c4, type: 3}
     - target: {fileID: 9221662320782205055, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: m_Radius
-      value: 0.24
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 9221662320782205055, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}

@@ -196,8 +196,8 @@ MonoBehaviour:
   upperRigidbody: {fileID: 6023756895504917137}
   lowerRigidbody: {fileID: 1382484864526926426}
   state: {fileID: 8841901677191831413}
-  forceStrength: 5000
-  torqueStrength: 5000
+  forceStrength: 1500
+  torqueStrength: 1500
   playerIndex: 0
 --- !u!114 &8841901677191831413
 MonoBehaviour:
