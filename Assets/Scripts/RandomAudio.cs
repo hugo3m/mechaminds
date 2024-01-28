@@ -28,7 +28,7 @@ public class RandomAudio : MonoBehaviour
 
     private void PlayAudio()
     {
-        int index = Random.Range(0, audioClips.Length);
+        int index = Random.Range(0, audioClips.Length - 1);
         
         AudioSource audio = GetComponent<AudioSource>();
         audio.clip = audioClips[index];
