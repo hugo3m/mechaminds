@@ -14,7 +14,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Start()
     {
-        playerController = Instantiate(players[FindObjectsOfType<PlayerController>().Length], transform.position, transform.rotation).GetComponent<PlayerController>();
+        playerController = Instantiate(players[FindObjectsOfType<PlayerController>().Length], GameObject.FindWithTag("PlayerSpawn").transform.position, transform.rotation).GetComponent<PlayerController>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -45,6 +45,17 @@ public class PlayerInputHandler : MonoBehaviour
         if (playerController)
         {
             playerController.Rotate(input);
+        }
+        
+    }
+    
+    public void OnDown(InputAction.CallbackContext context)
+    {
+        // reading input
+        float input = context.ReadValue<float>();
+        if (playerController)
+        {
+            playerController.Down(input);
         }
         
     }

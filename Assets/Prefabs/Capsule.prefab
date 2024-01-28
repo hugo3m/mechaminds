@@ -128,6 +128,7 @@ MonoBehaviour:
   state: {fileID: 0}
   forceStrength: 10000
   torqueStrength: 10
+  playerIndex: 0
 --- !u!54 &6144534717593962800
 Rigidbody:
   m_ObjectHideFlags: 0

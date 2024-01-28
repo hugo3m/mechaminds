@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PassiveCollider
   - ActiveCollider
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

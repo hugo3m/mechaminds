@@ -72,6 +72,20 @@ public class PlayerController : MonoBehaviour
         
     }
     
+    public void Down(float input)
+    {
+        // if alone
+        if (state.GetState() == EntityState.State.Alone)
+        {
+            //  create force vector adding jump
+            _leftHandInput = new Vector3(
+                _leftHandInput.x,
+                -input,
+                _leftHandInput.z); 
+        }
+        
+    }
+    
     public void Rotate(Vector2 input)
     {
         // create torque vector
@@ -90,9 +104,9 @@ public class PlayerController : MonoBehaviour
         {
             // add force to rigidbody
             upperRigidbody.AddForce(_leftHandInput.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
+            lowerRigidbody.AddForce(_leftHandInput.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
             // add torque to rigidbody
             upperRigidbody.AddRelativeTorque(_rightHandInput.normalized * (Time.deltaTime * torqueStrength), ForceMode.Force);
-            lowerRigidbody.AddForce(_leftHandInput.normalized * (Time.deltaTime * forceStrength), ForceMode.Force);
             lowerRigidbody.AddRelativeTorque(_rightHandInput.normalized * (Time.deltaTime * torqueStrength), ForceMode.Force);
         }
         if (state.GetState() == EntityState.State.Joined)
