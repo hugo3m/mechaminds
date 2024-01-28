@@ -9,21 +9,28 @@ public class TorsoState : EntityState
     
     public PassiveJunctionState[] PassiveJunctionStates = new PassiveJunctionState[4];
 
-    private void Start()
+    private void OnCollisionEnter(Collision other)
     {
+        if (other.collider.gameObject.transform.parent &&
+            other.collider.gameObject.transform.parent.gameObject.GetComponent<PlayerState>() &&
+            other.collider.gameObject.transform.parent.gameObject.GetComponent<PlayerState>().GetState() == State.Alone)
+        {
+            GetComponent<AudioManager>().PlayAudioTorso();    
+        }
+        
     }
 
     public void OnNewJunction()
     {
         index++;
-        if (index == 1)
+        if (index == 4)
         {
-            // gameObject.GetComponent<Rigidbody>().useGravity = true;
-            // GameObject Camera = GameObject.FindWithTag("MainCamera");
-            // GameObject Player = GameObject.FindWithTag("Player");
-            // Camera.transform.SetParent(Player.transform);
-            // Camera.transform.rotation = new Quaternion(0, 180, 0, 0);
-            // Camera.transform.position = new Vector3(0, 1, -7);
+            Invoke("PlaySound", 4);
         }
+    }
+
+    private void PlaySound()
+    {
+        GetComponent<AudioManager>().PlayAudio();
     }
 }

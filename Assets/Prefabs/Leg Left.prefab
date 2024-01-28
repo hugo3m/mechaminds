@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5742347887681858470}
   m_Layer: 0
   m_Name: Thigh
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 4385538631875911298}
   m_Layer: 0
   m_Name: Leg
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6023756895504917137}
   m_Layer: 0
   m_Name: Upper Arm
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 6334015777532912112}
   m_Layer: 0
   m_Name: Lower Arm
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
