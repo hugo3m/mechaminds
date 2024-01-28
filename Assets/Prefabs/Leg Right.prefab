@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 1946400043036894480}
   - component: {fileID: 4518676006751097702}
   - component: {fileID: 4044413745813777346}
-  - component: {fileID: 1419032885528774368}
   - component: {fileID: 266253764976336514}
   m_Layer: 0
   m_Name: Leg Right
@@ -249,21 +248,6 @@ MonoBehaviour:
   forceStrength: 10000
   torqueStrength: 10000
   playerIndex: 0
---- !u!114 &1419032885528774368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7278357239207008228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbfad6928c8104878a56e411839b31f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerState: {fileID: 266253764976336514}
-  myBody: {fileID: 0}
-  myMember: 0
 --- !u!114 &266253764976336514
 MonoBehaviour:
   m_ObjectHideFlags: 0
