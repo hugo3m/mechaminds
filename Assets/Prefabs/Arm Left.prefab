@@ -476,6 +476,11 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5247481645331503501, guid: db34280abff124bafb7a3fd8ef8fe840,
+        type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cf6a949aa25847108c968b175b88d3b, type: 3}
     - target: {fileID: 6284843998331118443, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}
       propertyPath: playerState
@@ -485,6 +490,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ActiveCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235661825027803568, guid: db34280abff124bafb7a3fd8ef8fe840,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cf6a949aa25847108c968b175b88d3b, type: 3}
+    - target: {fileID: 8235661825027803568, guid: db34280abff124bafb7a3fd8ef8fe840,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9221662320782205055, guid: db34280abff124bafb7a3fd8ef8fe840,
         type: 3}

@@ -24,6 +24,7 @@ public class TorsoJunction : MonoBehaviour
                 collider.GetComponent<PlayerJunction>().playerState.SetState(PlayerState.State.Joined);
                 passiveJunctionState.SetState(PlayerState.State.Joined);
                 PlayerJunction.Member member = collider.GetComponent<PlayerJunction>().myMember;
+                collider.GetComponent<AudioManager>().PlayAudio();
                 HingeJoint joint = collider.GetComponent<PlayerJunction>().myBody.gameObject.AddComponent<HingeJoint>();
                 joint.axis = myBody.transform.right;
                 joint.anchor = member == PlayerJunction.Member.Arm ? new UnityEngine.Vector3(0, 0, 0) : new UnityEngine.Vector3(0, -0.5f, 0);
