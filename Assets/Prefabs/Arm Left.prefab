@@ -106,9 +106,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.38
-  m_Height: 1.39
+  m_Height: 1.34
   m_Direction: 1
-  m_Center: {x: 0, y: 0.53, z: 0}
+  m_Center: {x: 0, y: 0.47, z: 0}
 --- !u!54 &6023756895504917137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -427,10 +427,10 @@ CapsuleCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.32
-  m_Height: 1.23
+  m_Radius: 0.38
+  m_Height: 1.33
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.02, y: 0, z: 0}
 --- !u!54 &1382484864526926426
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -467,8 +467,8 @@ HingeJoint:
   m_GameObject: {fileID: 8958384778364768521}
   m_ConnectedBody: {fileID: 6023756895504917137}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 1, z: 0}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Anchor: {x: 0, y: -0.47, z: 0}
+  m_Axis: {x: 0.48, y: 1.44, z: 0.05}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   serializedVersion: 2
@@ -486,8 +486,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: 0
-    max: 0
+    min: -100
+    max: 100
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0

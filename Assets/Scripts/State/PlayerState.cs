@@ -17,7 +17,7 @@ public class PlayerState : EntityState
     
     private void UpdateJoin()
     {
-        DestroyJoints();
+        /*DestroyJoints();
         if (CurrentState == State.Alone)
         {
             // add FixedJoint component to the current Rigidbody
@@ -31,7 +31,7 @@ public class PlayerState : EntityState
             CharacterJoint joint = gameObject.AddComponent<CharacterJoint>();
             // connect the joint to the other Rigidbody
             joint.connectedBody = otherRigidbody;
-        }
+        }*/
     }
     
     private void DestroyJoints()
